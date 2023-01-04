@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-class todoCell : UITableViewCell{
+class ToDoCell : UITableViewCell{
     
     
     @IBOutlet weak var titleLabel: UILabel!

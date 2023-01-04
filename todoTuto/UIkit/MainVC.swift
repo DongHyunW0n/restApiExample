@@ -9,14 +9,41 @@ import Foundation
 import UIKit
 import SwiftUI
 
-class MainVC: UIViewController{
+class MainVC: UIViewController {
     
+    @IBOutlet weak var myTableView: UITableView!
+    
+    var dummyDataList = ["asdasdasdasas","asdasdasdsadasd","ㅁㄴㅇㅁㄴㄴㅁㅁㄴ"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.view.backgroundColor = .systemYellow
+        
+        self.myTableView.register(ToDoCell.uinib, forCellReuseIdentifier: ToDoCell.reuseIdentifier) //todocell에서 가져옴.
+        self.myTableView.dataSource = self
+        
+        
     }
+}
+
+extension MainVC : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dummyDataList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ToDoCell.reuseIdentifier, for: indexPath) as? ToDoCell  else {
+            return UITableViewCell()  //가드를 이용해서 , todocell이 없다면 uitableviewcell을 반환하겠다는 뜻
+        }
+        
+        return cell
+        
+        
+    }
+    
+    
+    
 }
 
 
@@ -62,5 +89,42 @@ extension StoryBoarded{ //위에서 선언한 스토리보디드를 밑에서 �
 
 }
 
+
+
+protocol Nibbed {
+    
+    
+    static var uinib: UINib {get} //무조건 받아와야 하는거니 get
+}
+
+
+extension Nibbed{
+    static var uinib: UINib {
+        
+        return UINib(nibName: String(describing: Self.self), bundle: nil)
+    }
+
+    
+}
+
+extension UITableViewCell : Nibbed { } // nibbed를 준수하고 있다 !
+extension UITableViewCell : ReuseIdentifiale {} // reuseidentifiale을 준수하고 있다 !
+
+
+protocol ReuseIdentifiale {
+    
+    
+    static var reuseIdentifier: String {get} //무조건 받아와야 하는거니 get
+}
+
+
+extension ReuseIdentifiale{
+    static var reuseIdentifier: String {
+        
+        return String(describing: Self.self)
+        
+    }
+    
+}
 
 
