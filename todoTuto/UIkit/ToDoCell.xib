@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="231" id="Lr8-02-Pv7" customClass="todoCell" customModule="todoTuto" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="231"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lr8-02-Pv7" id="JKH-Sf-Thy">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="231"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="todoId : 01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1z-5u-TRR">
+                        <rect key="frame" x="20" y="34" width="80.333333333333329" height="20.333333333333329"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3j-BE-Fk8">
+                        <rect key="frame" x="20" y="74.333333333333329" width="233" height="146.66666666666669"/>
+                        <string key="text">할 일 내용할 일 내용할 일 내용할 일 내용할 일 내용할 일 내용할 일 내용할 일 내용할 일 내용할 일 내용할 일 내용할 일 내용할 일 내용할 일 내용할 일 내용할 일 내용할 일 내용할 일 내용할 일 내용할 일 내용할 일 내용할 일 내용할 일 내용할 일 내용할 일 내용할 일 내용할 일 내용</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cUQ-v0-4Yc">
+                        <rect key="frame" x="263" y="34" width="120" height="34.333333333333343"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLR-lR-Kw4">
+                                <rect key="frame" x="0.0" y="0.0" width="56" height="34.333333333333336"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="수정"/>
+                                <connections>
+                                    <action selector="onEditButtonClicked:" destination="Lr8-02-Pv7" eventType="touchUpInside" id="mmI-aJ-YwW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEP-Df-cUh">
+                                <rect key="frame" x="64" y="0.0" width="56" height="34.333333333333336"/>
+                                <color key="tintColor" red="0.42792992439999999" green="0.25587239950000001" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="삭제"/>
+                                <connections>
+                                    <action selector="onDeleteButtonClicked:" destination="Lr8-02-Pv7" eventType="touchUpInside" id="69Q-5N-wmG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="120" id="HCf-GT-s2H"/>
+                        </constraints>
+                    </stackView>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bw8-b4-rFD">
+                        <rect key="frame" x="334" y="76" width="51" height="31"/>
+                    </switch>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="n3j-BE-Fk8" firstAttribute="leading" secondItem="S1z-5u-TRR" secondAttribute="leading" id="5vE-be-k6r"/>
+                    <constraint firstItem="S1z-5u-TRR" firstAttribute="top" secondItem="JKH-Sf-Thy" secondAttribute="top" constant="34" id="9UO-65-wsV"/>
+                    <constraint firstItem="cUQ-v0-4Yc" firstAttribute="top" secondItem="S1z-5u-TRR" secondAttribute="top" id="ahT-oU-LZU"/>
+                    <constraint firstItem="S1z-5u-TRR" firstAttribute="leading" secondItem="JKH-Sf-Thy" secondAttribute="leading" constant="20" symbolic="YES" id="exJ-uZ-eqk"/>
+                    <constraint firstItem="n3j-BE-Fk8" firstAttribute="top" secondItem="S1z-5u-TRR" secondAttribute="bottom" constant="20" id="g7g-Ub-deU"/>
+                    <constraint firstItem="cUQ-v0-4Yc" firstAttribute="leading" secondItem="n3j-BE-Fk8" secondAttribute="trailing" constant="10" id="hvJ-4v-7LQ"/>
+                    <constraint firstItem="Bw8-b4-rFD" firstAttribute="top" secondItem="cUQ-v0-4Yc" secondAttribute="bottom" constant="7.6666666666666572" id="jaZ-d3-eBz"/>
+                    <constraint firstAttribute="bottom" secondItem="n3j-BE-Fk8" secondAttribute="bottom" constant="10" id="rcN-tB-T8g"/>
+                    <constraint firstAttribute="trailing" secondItem="cUQ-v0-4Yc" secondAttribute="trailing" constant="10" id="wS8-mw-wMN"/>
+                    <constraint firstItem="Bw8-b4-rFD" firstAttribute="trailing" secondItem="cUQ-v0-4Yc" secondAttribute="trailing" id="xbX-cM-sOS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="contentsLabel" destination="n3j-BE-Fk8" id="PzZ-BR-JEE"/>
+                <outlet property="selectionSwitch" destination="Bw8-b4-rFD" id="nqd-bl-gBk"/>
+                <outlet property="titleLabel" destination="S1z-5u-TRR" id="VGg-nm-ZY0"/>
+            </connections>
+            <point key="canvasLocation" x="159.54198473282443" y="37.676056338028168"/>
+        </tableViewCell>
+    </objects>
+</document>
