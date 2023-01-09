@@ -15,8 +15,9 @@ struct todoTutoApp: App {
                 
                 
                 
-                ContentView()
-                    .tabItem { //각 탭 아이템에 대한 설정
+
+                TodosView() //만든 SwiftUI 기반 뷰를 가져옴 
+                .tabItem { //각 탭 아이템에 대한 설정
                         Image(systemName: "1.square.fill")
                         Text("SwiftUI")
                     }

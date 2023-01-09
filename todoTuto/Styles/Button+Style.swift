@@ -23,7 +23,10 @@ struct MyDefaultBtnStyle: ButtonStyle {
   func makeBody(configuration: Configuration) -> some View {
     HStack {
       Spacer()
-      configuration.label.foregroundColor(textColor)
+        configuration.label
+            .foregroundColor(textColor)
+            .lineLimit(2)
+            .minimumScaleFactor(0.7)
       Spacer()
     }
     .padding()
@@ -31,3 +34,5 @@ struct MyDefaultBtnStyle: ButtonStyle {
     .scaleEffect(configuration.isPressed ? 0.95 : 1) // 버튼이 눌러졌을때 약간 들어가는 효과
   }
 }
+
+
