@@ -9,6 +9,10 @@ import SwiftUI
 
 @main
 struct todoTutoApp: App {
+    
+    
+    @StateObject var todosVM: TodosVM = TodosVM()
+    
     var body: some Scene {
         WindowGroup {
             TabView{ //탭뷰는 UiKit의 탭 바 컨트롤러
